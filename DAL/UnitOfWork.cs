@@ -23,8 +23,7 @@ namespace DAL
         public UnitOfWork(AutoShowContext context)
         {
             _context = context;
-            _context.Database.EnsureCreated();
-            
+            _context.Database.EnsureCreated();   
             BodyTypeRepository = new DataRepository<BodyType>(context);
             CarRepository = new DataRepository<Car>(context);
             CarsListViewModelRepository = new DataRepository<CarsListViewModel>(context);
