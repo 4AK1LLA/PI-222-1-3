@@ -3,6 +3,7 @@ using DAL.Contexts;
 using DAL.Interfaces;
 using Ninject;
 using Ninject.Web.Common;
+
 namespace DAL
 {
     public class UnitOfWork : IUnitOfWork

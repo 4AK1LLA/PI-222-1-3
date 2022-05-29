@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using DAL.Models;
+using BLL.Helpers;
 using BLL.ViewModels;
 
 namespace BLL.Controllers
@@ -10,11 +12,13 @@ namespace BLL.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         [HttpGet]
@@ -34,8 +38,20 @@ namespace BLL.Controllers
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, "user");
+                    // генерація токену для користувача
+                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var callbackUrl = Url.Action(
+                        "ConfirmEmail",
+                        "Account",
+                        new { userId = user.Id, code = code },
+                        protocol: HttpContext.Request.Scheme);
+                    EmailService emailService = new EmailService();
+                    await emailService.SendEmailAsync(
+                        model.Email, 
+                        "Confirm your account", 
+                        $"Підтвердіть реєстрацію, перейшовши по посиланню: <a href='{callbackUrl}'>link</a>");
 
-                    return NoContent();
+                    return Content("Для завершения реєстрації перевірте электронну пошту і перейдіть по посиланню, вказаному в листі");
                 }
                 else
                 {
@@ -47,6 +63,26 @@ namespace BLL.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return View("Error");
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return View("Error");
+            }
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            if (result.Succeeded)
+                return RedirectToAction("Index", "Home");
+            else
+                return View("Error");
         }
 
         [HttpGet]
