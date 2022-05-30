@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.ViewModels.CarViewModel">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAgAAAAAAAAAICAIAAIgBAAAIgAgAAACAA=</HashCode>
+      <FileName>ViewModels\CarViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Model" />
+      <Property Name="Color" />
+      <Property Name="BodyType" />
+      <Property Name="Drive" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.ViewModels.ErrorViewModel">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ViewModels.ChangePasswordViewModel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ChangePasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ViewModels.ChangeRoleViewModel">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAgAAAAAAAgAAAAACAAAAAA=</HashCode>
+      <FileName>ViewModels\ChangeRoleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ViewModels.CreateUserViewModel">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\CreateUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ViewModels.EditUserViewModel">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\EditUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ViewModels.LoginViewModel">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAIAAAAgAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ViewModels.RegisterViewModel">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RegisterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Helpers.EmailService">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Helpers\EmailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Helpers.RoleInitializer">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\RoleInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Controllers.BodyTypesController">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAACAAgAAAAAAAAEAAEACAAEAAIAAAAA=</HashCode>
+      <FileName>Controllers\BodyTypesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.ColorsController">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQABAADAAgAAEAAACAEAAEACAIEAAAAAAAg=</HashCode>
+      <FileName>Controllers\ColorsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.CustomersController">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAACAAgAAAABAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CustomersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.DrivesController">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAACAAgAAAAAAAAEAAEACCAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\DrivesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.ManagersController">
+    <Position X="19.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAACAAgBAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ManagersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.ModelsController">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAABAACAAgAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ModelsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.OrdersController">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAARBACAEgAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrdersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.OrderTypesController">
+    <Position X="16.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAACACgAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrderTypesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.ServicesController">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAABAACAAgAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ServicesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.UsersController">
+    <Position X="2.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAgAAAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_userManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.RolesController">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABAAAAAAAAAAAAAAAAAAgAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\RolesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_roleManager" />
+      <Field Name="_userManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.CarsController">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAABBACAAgAAQAAAAAEAAMACAAEAggAAAAA=</HashCode>
+      <FileName>Controllers\CarsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+      <Field Name="_unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Controllers.HomeController" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Controllers.AccountController">
+    <Position X="4.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAABAAAIgAAABAIAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_roleManager" />
+      <Field Name="_signInManager" />
+      <Field Name="_userManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Model" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Models.Color" Collapsed="true">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Models.BodyType" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Models.Drive" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.UserManager&lt;TUser&gt;" Collapsed="true">
+    <Position X="2.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.RoleManager&lt;TRole&gt;" Collapsed="true">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.SignInManager&lt;TUser&gt;" Collapsed="true">
+    <Position X="5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.Contexts.AutoShowContext" Collapsed="true">
+    <Position X="16" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="DAL.Interfaces.IUnitOfWork" Collapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
