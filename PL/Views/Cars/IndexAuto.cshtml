@@ -1,0 +1,186 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+}
+
+@model DAL.Models.CarsListViewModel
+
+@{
+    ViewData["Title"] = "Автомобілі";
+}
+
+@if (User.IsInRole("admin"))
+{
+    <p>
+        <a asp-action="CreateAuto">Додати автомобіль</a>
+    </p>
+}
+
+<div class="bg">
+    <img src="/img/bg.jpg" alt="">
+</div>
+<section class="product">
+    <h1 style="text-align: center; margin-top: 30px;" class="title">
+        INFINITI
+    </h1>
+    <h3 style="text-align: center; margin-bottom: 30px; " class="subtitle">
+        МОДЕЛЬНИЙ РЯД
+    </h3>
+    <div>
+        <form method="get">
+            <label class="control-label" style="margin:10px">Тип приводу: </label>
+            @Html.DropDownList("drive", new SelectList(Model.Drives.OrderBy(s => s.DriveType), "DriveId", "DriveType").Append(new SelectListItem("Усі", null, true)),
+                        htmlAttributes: new { @class = "form-control" })
+            <label class="control-label" style="margin:10px">Колір: </label>
+            @Html.DropDownList("color", new SelectList(Model.Colors.OrderBy(s => s.ColorName), "ColorId", "ColorName").Append(new SelectListItem("Усі", null, true)),
+                        htmlAttributes: new { @class = "form-control" })
+            <label class="control-label" style="margin:10px">Рік: </label>
+            @Html.DropDownList("year", new SelectList(Model.Cars.Select(s => s.GraduationYear).Distinct().OrderByDescending(y => y)).Append(new SelectListItem("Усі", null, true)),
+                        htmlAttributes: new { @class = "form-control" })
+            <div class="form-inline">
+                <input type="submit" style="margin:10px" value="Фільтр" class="btn btn-outline-primary" />
+                <a asp-action="IndexAuto" style="margin:10px" class="btn btn-outline-primary">Скинути</a>
+            </div>
+
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.Cars)
+            {
+                <div class="col col-4">
+                    <div class="card">
+                        <p class="product-name">
+                            @Html.DisplayFor(modelItem => item.Model.ModelName)
+                        </p>
+                        <p class="product-descriptions">
+                            @Html.DisplayFor(modelItem => item.Description)
+
+                        </p>
+                        @if (item.Image != null)
+                        {
+                            <img alt="" class="product-img" src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" />
+                        }
+                        <!--<img src="/img/product.png" alt="" class="product-img">-->
+                        <p class="product-price">
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </p>
+                        <button>
+                            <a style="color:white" asp-action="Details" asp-route-id="@item.CarId">Детальніше</a>
+                        </button>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+
+<section class="diagramD3" style="margin-top: 100px; margin-left: 200px; position: relative;">
+    <style>
+        .item {
+            position: relative;
+            margin-bottom: 7px;
+            font-size: 12px;
+            min-height: 20px;
+            min-width: 20px;
+            padding-right: 3px;
+            padding-top: 20px;
+            background-color: black;
+            text-align: right;
+            color: #f0f8ff;
+        }
+
+        .unselected {
+            display: none;
+        }
+    </style>
+    <select id="select" onchange="sort()">
+        <option selected disabled>Режим сортування</option>
+        <option value="compareByYear">За роком</option>
+        <option value="compareByPrice">За ціною</option>
+    </select><br /><br />
+    <div class="diagram">
+    </div>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"> </script>
+
+</section>
+
+
+<section style="margin-top: 80px;" class="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="col col-6">
+                <h1 style="margin-top: 50px; margin-bottom: 30px;" class="contact-title">
+                    КОНТАКТИ
+                </h1>
+
+
+                <div style="" class="info">
+                    <img src="/img/2232471 1.png" alt="" class="logo">
+                    <div class="block-info">
+                        <p class="info-title">
+                            АДРЕСА
+                        </p>
+
+                        <p style="max-width: 320px;" class="info-subtitle">
+                            Infiniti VIDI Liberty
+                            с. Чубинське, вул. Київська 51.
+                            7 хвилин від Києва по Бориспільському шосе
+                        </p>
+                        <br />
+                        <p style="max-width: 320px;" class="info-subtitle">
+                            Infiniti Auto-Aktiv
+                            м. Київ, проспект Перемоги 134
+                        </p>
+                        <br />
+                        <p style="max-width: 320px;" class="info-subtitle">
+                            Infiniti Liga Lux
+                            м. Хмельницький, вулиця Свободи, 15/1-Б
+                        </p>
+
+                    </div>
+                </div>
+
+
+                <div style="display: flex;justify-content: space-between; margin-top: 50px;">
+                    <div class="info">
+                        <img src="/img/172517_phone_icon 1.png" alt="" class="logo">
+                        <div class="block-info">
+                            <p class="info-title">
+                                СЛУЖБА ПІДТРИМКИ
+                            </p>
+                            <p style="max-width: 320px;" class="info-subtitle">
+                                +38 (044) 591 70 38
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <img src="/img/3586360_email_envelope_mail_send_icon 1.png" alt="" class="logo">
+                        <div class="block-info">
+                            <p class="info-title">
+                                КОНТАКТНИЙ E-MAIL
+                            </p>
+                            <p style="max-width: 320px;" class="info-subtitle">
+                                service@infiniti-vidi.com
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col col-6">
+                <div id="map">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
