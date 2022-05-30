@@ -19,7 +19,7 @@ namespace BLL.Controllers
             return View(await _unitOfWork.OrderTypeRepository.GetAllAsync());
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<ActionResult<OrderType>> Details(int id)
         {
             var orderType = await _unitOfWork.OrderTypeRepository.GetAsync(id);
             if (orderType == null)

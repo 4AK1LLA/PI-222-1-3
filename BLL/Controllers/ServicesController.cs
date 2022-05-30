@@ -19,7 +19,7 @@ namespace BLL.Controllers
             return View(await _unitOfWork.ServiceRepository.GetAllAsync());
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<ActionResult<Service>> Details(int id)
         {
             var service = await _unitOfWork.ServiceRepository.GetAsync(id);
             if (service == null)

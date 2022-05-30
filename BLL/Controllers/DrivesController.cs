@@ -19,7 +19,7 @@ namespace BLL.Controllers
             return View(await _unitOfWork.DriveRepository.GetAllAsync());
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<ActionResult<Drive>> Details(int id)
         {
             var drive = await _unitOfWork.DriveRepository.GetAsync(id);
             if (drive == null)

@@ -37,7 +37,7 @@ namespace BLL.Controllers
             return Ok(color);
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<ActionResult<Color>> Details(int id)
         {
             var color = await _unitOfWork.ColorRepository.GetAsync(id);
             if (color == null)

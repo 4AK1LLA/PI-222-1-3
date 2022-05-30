@@ -20,7 +20,7 @@ namespace BLL.Controllers
             return View(await _unitOfWork.ManagerRepository.GetAllAsync());
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<ActionResult<Manager>> Details(int id)
         {
             var manager = await _unitOfWork.ManagerRepository.GetAsync(id);
             if (manager == null)
