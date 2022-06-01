@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.Contexts.AutoShowContext">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAAACAAAQAAAAAAAgAAAAMAAAwAAAAAgAgAAAAAA=</HashCode>
+      <FileName>Contexts\AutoShowContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BodyTypes" />
+      <Property Name="Cars" />
+      <Property Name="Colors" />
+      <Property Name="Customers" />
+      <Property Name="Drives" />
+      <Property Name="Managers" />
+      <Property Name="Models" />
+      <Property Name="Orders" />
+      <Property Name="OrderTypes" />
+      <Property Name="Services" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Contexts.IdentityContext" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contexts\IdentityContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.BodyType">
+    <Position X="7" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAA=</HashCode>
+      <FileName>Models\BodyType.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cars" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Car">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <AssociationLine Name="BodyType" Type="DAL.Models.BodyType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="6.562" />
+        <Point X="7.75" Y="6.562" />
+        <Point X="7.75" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAgAAAAAAAAAICAIAAIgBAAAIgAgAAACAA=</HashCode>
+      <FileName>Models\Car.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BodyType" />
+      <Property Name="Color" />
+      <Property Name="Drive" />
+      <Property Name="Model" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.CarsListViewModel">
+    <Position X="12.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAACAgAAAAAAAgAQAAAA=</HashCode>
+      <FileName>Models\CarsListViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Cars" />
+      <Field Name="Colors" />
+      <Field Name="Drives" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Color">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <AssociationLine Name="Cars" Type="System.Collections.Generic.ICollection&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="3.374" />
+        <Point X="8.743" Y="3.374" />
+        <Point X="8.743" Y="5.301" />
+        <Point X="9.682" Y="5.301" Type="JumpStart" />
+        <Point X="9.849" Y="5.301" Type="JumpEnd" />
+        <Point X="10.094" Y="5.301" />
+        <Point X="10.094" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Models\Color.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cars" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Customer">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAIAAAAAAAAAAAAAAABAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Drive">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Cars" Type="System.Collections.Generic.ICollection&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.374" />
+        <Point X="9.032" Y="1.374" />
+        <Point X="9.032" Y="4.641" />
+        <Point X="9.766" Y="4.641" />
+        <Point X="9.766" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Drive.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cars" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Manager">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Model">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\Model.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cars" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Order">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAEAAAAAAAAAAAAAAgAIAIAAAAAABBAAAAgQAAAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+      <Property Name="Manager" />
+      <Property Name="Model" />
+      <Property Name="OrderType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.OrderType">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\OrderType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Service">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.User">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DataRepository&lt;T&gt;">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAACQAABAAAAAAABAEACAAAAAgAAAAAYIAAAAA=</HashCode>
+      <FileName>DataRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.UnitOfWork">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIADAAAAAEAABAAAEAgAAAAAAAAAECgAAAAgAgAAAAA=</HashCode>
+      <FileName>UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+      <Property Name="BodyTypeRepository" />
+      <Property Name="CarRepository" />
+      <Property Name="CarsListViewModelRepository" />
+      <Property Name="ColorRepository" />
+      <Property Name="CustomerRepository" />
+      <Property Name="DriveRepository" />
+      <Property Name="ManagerRepository" />
+      <Property Name="ModelRepository" />
+      <Property Name="OrderRepository" />
+      <Property Name="OrderTypeRepository" />
+      <Property Name="ServiceRepository" />
+      <Property Name="UserRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.IdentityUser" Collapsed="true">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="DAL.Interfaces.IDataRepository&lt;T&gt;" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAACQAAAAAAAAAABAEACAAAAAgAAAAAYIAAAAA=</HashCode>
+      <FileName>Interfaces\IDataRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DAL.Interfaces.IUnitOfWork" Collapsed="true">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIADAAAAAEAAAAAAEAgAAAAAAAAAECgAAAAgAgAAAAA=</HashCode>
+      <FileName>Interfaces\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="System.Collections.Generic.ICollection&lt;T&gt;" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IEnumerable&lt;T&gt;" Collapsed="true">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

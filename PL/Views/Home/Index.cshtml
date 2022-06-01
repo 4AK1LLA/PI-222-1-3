@@ -1,0 +1,29 @@
+﻿
+    @{
+        ViewData["Title"] = "Курсова АППЗ 2022";
+    }
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div style="padding:160px 0" class="container">
+            <p>@User.Identity.Name</p>
+
+            <form method="post" asp-controller="Account" asp-action="Logout">
+                <input type="submit" value="Вихід" />
+            </form>
+            </div>
+    }
+    else
+    {
+
+        <div class="container">
+
+            <div class="login-form">
+                <a asp-controller="Account" asp-action="Login">Вхід</a>
+                <a asp-controller="Account" asp-action="Register">Реєстація</a>
+            </div>
+
+        </div>
+
+    }
